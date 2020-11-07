@@ -3,10 +3,10 @@ import React, { ReactElement } from 'react';
 import { Person } from '../types';
 
 const PersonDetailsBox = ({
-  id,
+  // id,
   name,
   //   email,
-  avatar,
+  // avatar, // image URLs returning 522 // not working
   description,
 }: Person): ReactElement => {
   return (
