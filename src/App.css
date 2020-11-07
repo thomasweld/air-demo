@@ -4,13 +4,21 @@ ul {
   margin: 0;
 }
 
+input {
+  width: 100%;
+  background-color: #efefef;
+  border: none;
+  height: 40px;
+  padding-left: 16px;
+}
+
 .App {
   text-align: center;
   margin: auto;
   background-color: #ffffff;
   max-width: 1440px;
-  /* border: 1px solid blue; */
   min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
 }
 
 .App-logo {
@@ -28,17 +36,20 @@ ul {
   flex-direction: row;
   align-items: center;
   justify-content: left;
-  /* font-size: calc(10px + 2vmin); */
-  /* color: white; */
 }
 
 .App-link {
   color: #61dafb;
 }
 
-.PeopleFinderWrapper {
+.peopleFinderWrapper {
   max-width: 576px;
   margin: auto;
+}
+
+.personFinderTitle {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 400;
 }
 
 .PersonDetailsBox {
@@ -60,4 +71,27 @@ ul {
   width: 100%;
   text-align: left;
   padding-left: 24px;
+}
+
+@media (max-width: 500px) {
+  input {
+    width: 90%;
+    margin: auto;
+  }
+  .peopleFinderWrapper {
+    width: 90%;
+  }
+  .PersonDetailsBox {
+    width: 90%;
+    height: 100%;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid lightgrey;
+    margin: auto;
+    padding-top: 16px;
+  }
+  .personAvatar {
+    align-self: left;
+  }
 }

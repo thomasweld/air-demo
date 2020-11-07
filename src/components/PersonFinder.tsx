@@ -23,8 +23,8 @@ const PersonFinder = (): ReactElement => {
   }, [searchString]);
 
   return (
-    <div className="PeopleFinderWrapper">
-      <h1>The Person Finder</h1>
+    <div className="peopleFinderWrapper">
+      <h1 className="personFinderTitle">The Person Finder</h1>
       <p>
         If you just can’t find someone and need to know what they look like,
         you’ve come to the right place! Just type the name of the person you are
@@ -35,29 +35,14 @@ const PersonFinder = (): ReactElement => {
         placeholder="Type a name..."
         onChange={handleSearchStringChange}
       />
-      {searchString === '' && (
-        <ul>
-          {peopleData.map((person) => {
-            return <PersonDetailsBox {...person} />;
-          })}
-        </ul>
-      )}
 
-      {searchString !== '' && (
-        <ul>
-          {filteredList.map((person) => {
-            return <PersonDetailsBox {...person} />;
-          })}
-        </ul>
-      )}
+      <ul>
+        {filteredList.map((person) => {
+          return <PersonDetailsBox {...person} key={person.id} />;
+        })}
+      </ul>
     </div>
   );
 };
 
 export default PersonFinder;
-
-//   {/* {searchString !== '' &&
-//     filteredList.map((person) => {
-//       return <PersonDetailsBox {...person} />;
-//     })}
-// </ul> */}

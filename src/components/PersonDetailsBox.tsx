@@ -10,7 +10,7 @@ const PersonDetailsBox = ({
   description,
 }: Person): ReactElement => {
   return (
-    <li key={`${id}-${name}`} className="PersonDetailsBox">
+    <li className="PersonDetailsBox">
       <img
         // src={avatar} // image URLs returning 522 // not working
         src={'https://via.placeholder.com/96'}
