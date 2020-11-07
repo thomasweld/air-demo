@@ -1,14 +1,8 @@
 import React, { ReactElement, useState, useEffect } from 'react';
 
 import peopleData from '../assets/peopleData.json';
-
-type Person = {
-  id: number;
-  name: string;
-  email: string;
-  avatar: string;
-  description: string;
-};
+import { Person } from '../types';
+import PersonDetailsBox from './PersonDetailsBox';
 
 const PersonFinder = (): ReactElement => {
   const [filteredList, setFilteredList] = useState<Person[]>([]);
@@ -41,19 +35,29 @@ const PersonFinder = (): ReactElement => {
         placeholder="Type a name..."
         onChange={handleSearchStringChange}
       />
-      <ul>
-        {searchString === '' &&
-          peopleData.map((person) => {
-            return <li key={person.id}>{person.name}</li>;
+      {searchString === '' && (
+        <ul>
+          {peopleData.map((person) => {
+            return <PersonDetailsBox {...person} />;
           })}
+        </ul>
+      )}
 
-        {searchString !== '' &&
-          filteredList.map((person) => {
-            return <li key={person.id}>{person.name}</li>;
+      {searchString !== '' && (
+        <ul>
+          {filteredList.map((person) => {
+            return <PersonDetailsBox {...person} />;
           })}
-      </ul>
+        </ul>
+      )}
     </div>
   );
 };
 
 export default PersonFinder;
+
+//   {/* {searchString !== '' &&
+//     filteredList.map((person) => {
+//       return <PersonDetailsBox {...person} />;
+//     })}
+// </ul> */}
