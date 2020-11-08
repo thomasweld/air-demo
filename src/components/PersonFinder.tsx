@@ -1,11 +1,8 @@
-import React, { ReactElement, useState, useEffect } from 'react';
+import React, { ReactElement, useState } from 'react';
 
-import peopleData from '../assets/peopleData.json';
-import { Person } from '../types';
-import PersonDetailsBox from './PersonDetailsBox';
+import PersonFinderList from './PersonFinderList';
 
 const PersonFinder = (): ReactElement => {
-  const [filteredList, setFilteredList] = useState<Person[]>([]);
   const [searchString, setSearchString] = useState('');
 
   const handleSearchStringChange = (event: {
@@ -13,14 +10,6 @@ const PersonFinder = (): ReactElement => {
   }) => {
     setSearchString(event.target.value);
   };
-
-  useEffect(() => {
-    setFilteredList(
-      peopleData.filter(({ name }) =>
-        name.toLocaleLowerCase().includes(searchString.toLowerCase())
-      )
-    );
-  }, [searchString]);
 
   return (
     <div className="peopleFinderWrapper">
@@ -36,11 +25,7 @@ const PersonFinder = (): ReactElement => {
         onChange={handleSearchStringChange}
       />
 
-      <ul>
-        {filteredList.map((person) => {
-          return <PersonDetailsBox {...person} key={person.id} />;
-        })}
-      </ul>
+      <PersonFinderList searchString={searchString} />
     </div>
   );
 };
