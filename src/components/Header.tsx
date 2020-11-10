@@ -4,9 +4,9 @@ import logo from '../assets/Union.svg';
 
 const Header = (): ReactElement => {
   return (
-    <header className="App-header">
+    <nav className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
-    </header>
+    </nav>
   );
 };
 

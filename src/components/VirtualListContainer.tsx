@@ -37,7 +37,7 @@ const VirtualListContainer = ({
 
   return (
     <List
-      height={600}
+      height={460}
       itemCount={filteredList.length}
       itemSize={getItemSize}
       width={'100%'}

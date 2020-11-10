@@ -28,19 +28,22 @@ const PersonFinder = ({
 
   return (
     <>
-      <h1 className="personFinderTitle">The Person Finder</h1>
-      <p>
-        If you just can’t find someone and need to know what they look like,
-        you’ve come to the right place! Just type the name of the person you are
-        looking for below into the search box!
-      </p>
+      <header className="headerBox">
+        <h1 className="personFinderTitle">The Person Finder</h1>
+        <p className="personFinderDescription">
+          If you just can’t find someone and need to know what they look like,
+          you’ve come to the right place! Just type the name of the person you
+          are looking for below into the search box!
+        </p>
+      </header>
       <input
         type="text"
         placeholder="Type a name..."
         onChange={handleSearchStringChange}
       />
-
-      <VirtualListContainer {...VirtualListProps} />
+      <div className="virtualListWrapper">
+        <VirtualListContainer {...VirtualListProps} />
+      </div>
     </>
   );
 };
