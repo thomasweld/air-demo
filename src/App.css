@@ -50,6 +50,7 @@ input {
 .personFinderTitle {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 400;
+  text-align: left;
 }
 
 .PersonDetailsBox {
@@ -83,8 +84,7 @@ input {
   }
   .PersonDetailsBox {
     width: 90%;
-    height: 100%;
-    min-height: 180px;
+    height: 300px !important;
     display: flex;
     flex-direction: column;
     border-bottom: 1px solid lightgrey;

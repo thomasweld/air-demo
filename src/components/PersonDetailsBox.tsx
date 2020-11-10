@@ -3,14 +3,14 @@ import React, { ReactElement } from 'react';
 import { Person } from '../types';
 
 const PersonDetailsBox = ({
-  // id,
-  name,
-  //   email,
-  // avatar, // image URLs returning 522 // not working
-  description,
-}: Person): ReactElement => {
+  person,
+  style,
+}: {
+  person: Person;
+  style: any;
+}): ReactElement => {
   return (
-    <li className="PersonDetailsBox">
+    <li className="PersonDetailsBox" style={style} key={person.id}>
       <img
         // src={avatar} // image URLs returning 522 // not working
         src={'https://via.placeholder.com/96'}
@@ -18,8 +18,8 @@ const PersonDetailsBox = ({
         alt={`Avatar of ${name}`}
       />
       <div className="personNameAndDetails">
-        <h4>{name}</h4>
-        <p>{description}</p>
+        <h4>{person.name}</h4>
+        <p>{person.description}</p>
       </div>
     </li>
   );
