@@ -31,7 +31,7 @@ const VirtualListContainer = ({
   getItemSize,
 }: {
   filteredList: Person[];
-  getItemSize: (index: number) => number;
+  getItemSize: () => number;
 }): ReactElement => {
   const itemData = createItemData(filteredList);
 

@@ -1,12 +1,5 @@
-import React, {
-  ReactElement,
-  useState,
-  useEffect,
-  useCallback,
-  SetStateAction,
-} from 'react';
+import React, { ReactElement, SetStateAction } from 'react';
 
-// import peopleData from '../assets/peopleData.json';
 import { Person } from '../types';
 import VirtualListContainer from './VirtualListContainer';
 
@@ -19,7 +12,7 @@ const PersonFinder = ({
     target: { value: SetStateAction<string> };
   }) => void;
   filteredList: Person[];
-  getItemSize: (index: number) => number;
+  getItemSize: () => number;
 }): ReactElement => {
   const VirtualListProps = {
     filteredList,

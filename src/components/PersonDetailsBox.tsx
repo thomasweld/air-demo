@@ -12,7 +12,6 @@ const PersonDetailsBox = ({
   return (
     <li className="personDetailsBox" style={style} key={person.id}>
       <img
-        // src={avatar} // image URLs returning 522 // not working
         src={'https://via.placeholder.com/96'}
         className="personAvatar"
         alt={`Avatar of ${name}`}

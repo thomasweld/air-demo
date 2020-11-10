@@ -22,10 +22,9 @@ const PersonFinderContainer = (): ReactElement => {
     );
   }, [peopleData, searchString]);
 
-  const getItemSize = useCallback(
-    (index: number) => (window.innerWidth < 500 ? 316 : 144),
-    [window.innerWidth]
-  );
+  const getItemSize = useCallback(() => (window.innerWidth < 500 ? 316 : 144), [
+    window.innerWidth,
+  ]);
 
   const PersonFinderProps = {
     handleSearchStringChange,
