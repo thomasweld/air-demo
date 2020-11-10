@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { CSSProperties, ReactElement } from 'react';
 
 import { Person } from '../types';
 
@@ -7,7 +7,7 @@ const PersonDetailsBox = ({
   style,
 }: {
   person: Person;
-  style: any;
+  style: CSSProperties;
 }): ReactElement => {
   return (
     <li className="personDetailsBox" style={style} key={person.id}>
