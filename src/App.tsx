@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 
 import Header from './components/Header';
-import PersonFinder from './components/PersonFinder';
+import PersonFinderContainer from './components/PersonFinderContainer';
 
 import './App.css';
 
@@ -9,7 +9,7 @@ function App(): ReactElement {
   return (
     <div className="App">
       <Header />
-      <PersonFinder />
+      <PersonFinderContainer />
     </div>
   );
 }
